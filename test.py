@@ -1,21 +1,24 @@
 import docker
-import sys
-import requests
 
+client = docker.from_env()
 
-# client.images.pull("fonalex45/katet:latest")
-
-client = docker.DockerClient(base_url='unix://var/run/docker.sock')
 
 ENVIRONMENT = ["NAME=$NAME", "TARGET=$TARGET", "IP=$IP", "DOMAIN=$DOMAIN"]
 
+NAME = input("Enter Container Name: ")
+# def container_run():
 
-def container_run(rm):
-    client.containers.run('fonalex45/katet:latest',
+try:
+
+    client.containers.run("fonalex45/katet:latest",
                           entrypoint="/bin/zsh",
                           environment=ENVIRONMENT,
-                          remove=rm
+                          remove=True,
+                          network_mode="host",
+                          tty=True,
+                          name=NAME
                           )
-
-
-container_run(True)
+except KeyboardInterrupt:
+    print("\nContainer is running")
+else:
+    print("Running")
