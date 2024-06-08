@@ -57,3 +57,5 @@ mkdir -p $HOME/.logs
 mkdir -p $HOME/tools
 
 mkdir -p $HOME/.proxychains
+
+mkdir -p $HOME/.config/tmuxp

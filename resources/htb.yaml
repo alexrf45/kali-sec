@@ -1,0 +1,29 @@
+session_name: htb
+windows:
+- window_name: recon
+  layout: tiled
+  panes:
+   -
+   -
+
+- window_name: access_enum
+  layout: tiled
+  panes:
+    -
+    -
+
+- window_name: foothold_pivot
+  layout: tiled
+  panes:
+    -[ -f ./exploit/fr3d.pub ] || ssh-keygen -t ed25519 -C "fr3d" -N '' -f ./exploit/fr3d && chmod 600 ./exploit/fr3d
+    - rlwrap nc -nvlp 9002
+    -
+
+- window_name: privesc
+  layout: tiled
+  panes:
+    -
+    -
+    -
+    -
+

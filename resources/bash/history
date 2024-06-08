@@ -145,6 +145,7 @@ lsassy -v -u "$USER" -H "$NT_HASH" -K lsass_loot -o lsass_creds.txt 192.168.56.0
 maigret "username"
 masscan -v -p 1-65535 --rate=10000 -e eth0 192.168.56.0/24
 masscan -v -p 1-65535,U:1-65535 --rate=10000 -e eth0 192.168.56.0/24
+miniserve --tls-cert my.crt --tls-key my.key -p 9000 -v --random-route -t "Hello"  -F -u
 mitm6 --interface eth0
 mitm6 --interface eth0 --domain "$DOMAIN"
 mkdir -p test/{recon,exploit,report}

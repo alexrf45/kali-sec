@@ -6,7 +6,8 @@ mkdir -p $HOME/.config && cp /home/kali/resources/tmux.conf /home/kali/.tmux.con
 	cp -r /home/kali/resources/proxychains.conf /home/kali/.proxychains/proxychains.conf &&
 	cp -r /home/kali/resources/kerbrute /home/kali/.local/bin/kerbrute && chmod +x /home/kali/.local/bin/kerbrute &&
 	cp -r /home/kali/resources/smbserver.py /home/kali/tools/smbserver.py &&
-	cp -r /home/kali/resources/bash/history /home/kali/.history
+	cp -r /home/kali/resources/bash/history /home/kali/.history &&
+	cp -r /home/kali/resources/htb.yaml /home/kali/.config/tmuxp/htb.yaml
 
 git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
 
